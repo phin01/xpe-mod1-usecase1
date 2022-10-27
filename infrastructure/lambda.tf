@@ -14,8 +14,8 @@ resource "aws_lambda_function" "executa_emr" {
     source_code_hash    = filebase64sha256("lambda_function_payload.zip")
     
     tags = {
-        IES = "IGTI"
-        CURSO = "EDC"
-        USE_CASE = "1"
+        IES         = "IGTI"
+        CURSO       = "EDC"
+        USE_CASE    = "1"
     }
 }
