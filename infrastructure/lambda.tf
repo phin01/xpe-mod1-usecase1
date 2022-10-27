@@ -2,7 +2,7 @@ resource "aws_lambda_function" "executa_emr" {
 
     filename            = "lambda_function_payload.zip"
     function_name       = var.lambda_function_name
-    role                = aws_iam_role.lambda.arn
+    role                = aws_iam_role.lambda_role.arn
     
     # nome da função 'handler', no arquivo 'lambda_function.py'
     handler             = "lambda_function.handler"
