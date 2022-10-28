@@ -18,7 +18,7 @@ enem = (
     .option("inferSchema", True)
     .option("header", True)
     .option("delimiter", ";")
-    .load("s3://datalake-ney-igti-edc/raw-data/enem")
+    .load("s3://datalake-paulo-391810/raw-data/modulo-1/enem/")
 )
 
 # Escreve a tabela em staging em formato delta
@@ -28,6 +28,6 @@ print("Writing delta table...")
     .write
     .mode("overwrite")
     .format("delta")
-    .partitionBy("year")
-    .save("s3://datalake-ney-igti-edc-tf/staging-zone/enem")
+    # .partitionBy("year")
+    .save("s3://datalake-edc-usecase1-tf-dev-1234567/staging-zone/modulo-1/enem/")
 )
