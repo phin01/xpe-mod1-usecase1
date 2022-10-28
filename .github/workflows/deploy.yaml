@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    name: Test infra on PR
+    name: Build infra on push
     runs-on: ubuntu-latest
 
     steps:
@@ -35,7 +35,7 @@ jobs:
       env: 
         COMMAND_IAC: terraform
       run: |
-        cd iac
+        cd infrastructure
         $COMMAND_IAC init
         $COMMAND_IAC validate
         $COMMAND_IAC plan
